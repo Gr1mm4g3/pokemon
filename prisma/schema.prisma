@@ -1,0 +1,70 @@
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id          String       @id
+  username    String?
+  createdAt   DateTime     @default(now())
+  tournaments Tournament[]
+}
+
+model PokemonRoster {
+  id          Int      @id // PokeAPI ID (1 to 151)
+  name        String
+  spriteUrl   String
+  types       String   // JSON string array e.g. ["grass", "poison"]
+  baseStats   String   // JSON string e.g. {"hp": 45, "attack": 49, "defense": 49, "spAttack": 65, "spDefense": 65, "speed": 45}
+  moves       String   // JSON string of move definitions
+  eloRating   Float    @default(1000.0)
+
+  matchesAsA  Match[]  @relation("PokemonA")
+  matchesAsB  Match[]  @relation("PokemonB")
+  matchesWon  Match[]  @relation("Winner")
+
+  @@index([eloRating])
+}
+
+model Tournament {
+  id                 String   @id @default(uuid())
+  userId             String?
+  user               User?    @relation(fields: [userId], references: [id])
+  name               String   @default("Kanto 151 Championship")
+  status             String   @default("pending") // pending, in_progress, completed
+  currentMatchIndex  Int      @default(0)
+  totalMatches       Int      @default(22650)
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+  matches            Match[]
+
+  @@index([status])
+  @@index([createdAt])
+}
+
+model Match {
+  id           String        @id @default(uuid())
+  tournamentId String
+  tournament   Tournament    @relation(fields: [tournamentId], references: [id], onDelete: Cascade)
+  matchOrder   Int
+  pokemonAId   Int
+  pokemonA     PokemonRoster @relation("PokemonA", fields: [pokemonAId], references: [id])
+  pokemonBId   Int
+  pokemonB     PokemonRoster @relation("PokemonB", fields: [pokemonBId], references: [id])
+  winnerId     Int?
+  winner       PokemonRoster? @relation("Winner", fields: [winnerId], references: [id])
+  status       String        @default("pending") // pending, active, finished
+  turnsCount   Int?
+  battleLog    String?       // JSON string of turns for replay / review
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+
+  @@index([tournamentId, status, matchOrder])
+  @@index([tournamentId, winnerId])
+  @@index([pokemonAId])
+  @@index([pokemonBId])
+}
