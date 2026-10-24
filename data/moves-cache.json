@@ -2940,5 +2940,841 @@
     "accuracy": 100,
     "pp": 15,
     "description": "The user swings its tough tail wildly and attacks opposing Pokémon. This also lowers their Attack stats."
+  },
+  "smokescreen": {
+    "id": "smokescreen",
+    "name": "Smokescreen",
+    "type": "normal",
+    "category": "status",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 20,
+    "effect": "stat_debuff",
+    "description": "Lowers the foe's accuracy."
+  },
+  "bite": {
+    "id": "bite",
+    "name": "Bite",
+    "type": "dark",
+    "category": "physical",
+    "power": 60,
+    "accuracy": 100,
+    "pp": 25,
+    "description": "An attack that may cause flinching."
+  },
+  "yawn": {
+    "id": "yawn",
+    "name": "Yawn",
+    "type": "normal",
+    "category": "status",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 10,
+    "effect": "status_sleep",
+    "description": "Lulls the foe into yawning, then sleeping next turn."
+  },
+  "life-dew": {
+    "id": "life-dew",
+    "name": "Life Dew",
+    "type": "water",
+    "category": "status",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 10,
+    "description": "The user scatters mysterious water around and restores the HP of itself and its ally Pokémon in the battle."
+  },
+  "pollen-puff": {
+    "id": "pollen-puff",
+    "name": "Pollen Puff",
+    "type": "bug",
+    "category": "special",
+    "power": 90,
+    "accuracy": 100,
+    "pp": 15,
+    "description": "The user attacks the enemy with a pollen puff that explodes. If the target is an ally, it gives the ally a pollen puff that restores its HP instead."
+  },
+  "work-up": {
+    "id": "work-up",
+    "name": "Work Up",
+    "type": "normal",
+    "category": "status",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 30,
+    "description": "The user is roused, and its Attack and Sp. Atk stats increase."
+  },
+  "hurricane": {
+    "id": "hurricane",
+    "name": "Hurricane",
+    "type": "flying",
+    "category": "special",
+    "power": 110,
+    "accuracy": 70,
+    "pp": 10,
+    "description": "The user attacks by wrapping its opponent in a fierce wind that flies up into the sky. It may also confuse the target."
+  },
+  "air-cutter": {
+    "id": "air-cutter",
+    "name": "Air Cutter",
+    "type": "flying",
+    "category": "special",
+    "power": 60,
+    "accuracy": 95,
+    "pp": 25,
+    "description": "Hacks with razorlike wind. High critical-hit ratio."
+  },
+  "thunder-fang": {
+    "id": "thunder-fang",
+    "name": "Thunder Fang",
+    "type": "electric",
+    "category": "physical",
+    "power": 65,
+    "accuracy": 95,
+    "pp": 15,
+    "description": "The user bites with electrified fangs. It may also make the foe flinch or become paralyzed."
+  },
+  "nasty-plot": {
+    "id": "nasty-plot",
+    "name": "Nasty Plot",
+    "type": "dark",
+    "category": "status",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 20,
+    "effect": "stat_buff",
+    "description": "The user stimulates its brain by thinking bad thoughts. It sharply raises the user’s Sp. Atk."
+  },
+  "high-horsepower": {
+    "id": "high-horsepower",
+    "name": "High Horsepower",
+    "type": "ground",
+    "category": "physical",
+    "power": 95,
+    "accuracy": 95,
+    "pp": 10,
+    "description": "The user fiercely attacks the target using its entire body."
+  },
+  "electro-ball": {
+    "id": "electro-ball",
+    "name": "Electro Ball",
+    "type": "electric",
+    "category": "special",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 10,
+    "description": "The user hurls an electric orb at the target. The faster the user is than the target, the greater the damage."
+  },
+  "feint": {
+    "id": "feint",
+    "name": "Feint",
+    "type": "normal",
+    "category": "physical",
+    "power": 30,
+    "accuracy": 100,
+    "pp": 10,
+    "description": "An attack that hits a foe using Protect or Detect. It also lifts the effects of those moves."
+  },
+  "quick-attack": {
+    "id": "quick-attack",
+    "name": "Quick Attack",
+    "type": "normal",
+    "category": "physical",
+    "power": 40,
+    "accuracy": 100,
+    "pp": 30,
+    "description": "Lets the user get in the first hit."
+  },
+  "beat-up": {
+    "id": "beat-up",
+    "name": "Beat Up",
+    "type": "dark",
+    "category": "physical",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 10,
+    "description": "Party POKéMON join in the attack. "
+  },
+  "hex": {
+    "id": "hex",
+    "name": "Hex",
+    "type": "ghost",
+    "category": "special",
+    "power": 65,
+    "accuracy": 100,
+    "pp": 10,
+    "description": "This relentless attack does massive damage to a target affected by status problems."
+  },
+  "sweet-kiss": {
+    "id": "sweet-kiss",
+    "name": "Sweet Kiss",
+    "type": "fairy",
+    "category": "status",
+    "power": 0,
+    "accuracy": 75,
+    "pp": 10,
+    "description": "A move that causes confusion."
+  },
+  "swallow": {
+    "id": "swallow",
+    "name": "Swallow",
+    "type": "normal",
+    "category": "status",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 10,
+    "description": "Absorbs stockpiled power and restores HP."
+  },
+  "drain-punch": {
+    "id": "drain-punch",
+    "name": "Drain Punch",
+    "type": "fighting",
+    "category": "physical",
+    "power": 75,
+    "accuracy": 100,
+    "pp": 10,
+    "description": "An energy-draining punch. The user’s HP is restored by half the damage taken by the target."
+  },
+  "splash": {
+    "id": "splash",
+    "name": "Splash",
+    "type": "normal",
+    "category": "status",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 40,
+    "description": "Has no effect whatsoever."
+  },
+  "wing-attack": {
+    "id": "wing-attack",
+    "name": "Wing Attack",
+    "type": "flying",
+    "category": "physical",
+    "power": 60,
+    "accuracy": 100,
+    "pp": 35,
+    "description": "Strikes the target with wings."
+  },
+  "fury-cutter": {
+    "id": "fury-cutter",
+    "name": "Fury Cutter",
+    "type": "bug",
+    "category": "physical",
+    "power": 40,
+    "accuracy": 95,
+    "pp": 20,
+    "description": "Successive hits raise power."
+  },
+  "sweet-scent": {
+    "id": "sweet-scent",
+    "name": "Sweet Scent",
+    "type": "normal",
+    "category": "status",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 20,
+    "description": "Reduces the foe's evasiveness."
+  },
+  "night-shade": {
+    "id": "night-shade",
+    "name": "Night Shade",
+    "type": "ghost",
+    "category": "special",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 15,
+    "description": "The user's level equals damage HP."
+  },
+  "giga-impact": {
+    "id": "giga-impact",
+    "name": "Giga Impact",
+    "type": "normal",
+    "category": "physical",
+    "power": 150,
+    "accuracy": 90,
+    "pp": 5,
+    "description": "The user charges at the foe using every bit of its power. The user must rest on the next turn."
+  },
+  "psychic": {
+    "id": "psychic",
+    "name": "Psychic",
+    "type": "psychic",
+    "category": "special",
+    "power": 90,
+    "accuracy": 100,
+    "pp": 10,
+    "description": "An attack that may lower SPCL.DEF."
+  },
+  "aromatherapy": {
+    "id": "aromatherapy",
+    "name": "Aromatherapy",
+    "type": "grass",
+    "category": "status",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 5,
+    "description": "Heals all status problems with a soothing scent."
+  },
+  "vacuum-wave": {
+    "id": "vacuum-wave",
+    "name": "Vacuum Wave",
+    "type": "fighting",
+    "category": "special",
+    "power": 40,
+    "accuracy": 100,
+    "pp": 30,
+    "description": "The user whirls its fists to send a wave of pure vacuum at the foe. This move always goes first."
+  },
+  "flare-blitz": {
+    "id": "flare-blitz",
+    "name": "Flare Blitz",
+    "type": "fire",
+    "category": "physical",
+    "power": 120,
+    "accuracy": 100,
+    "pp": 15,
+    "description": "The user cloaks itself in fire and charges at the foe. The user sustains serious damage, too."
+  },
+  "embargo": {
+    "id": "embargo",
+    "name": "Embargo",
+    "type": "dark",
+    "category": "status",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 15,
+    "description": "It prevents the foe from using its held item. Its Trainer is also prevented from using items on it."
+  },
+  "mega-kick": {
+    "id": "mega-kick",
+    "name": "Mega Kick",
+    "type": "normal",
+    "category": "physical",
+    "power": 120,
+    "accuracy": 75,
+    "pp": 5,
+    "description": "A powerful kicking attack."
+  },
+  "iron-head": {
+    "id": "iron-head",
+    "name": "Iron Head",
+    "type": "steel",
+    "category": "physical",
+    "power": 80,
+    "accuracy": 100,
+    "pp": 15,
+    "description": "The foe slams the target with its steel-hard head. It may also make the target flinch."
+  },
+  "razor-leaf": {
+    "id": "razor-leaf",
+    "name": "Razor Leaf",
+    "type": "grass",
+    "category": "physical",
+    "power": 55,
+    "accuracy": 95,
+    "pp": 25,
+    "description": "Has a high criti­ cal hit ratio."
+  },
+  "low-kick": {
+    "id": "low-kick",
+    "name": "Low Kick",
+    "type": "fighting",
+    "category": "physical",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 20,
+    "description": "An attack that may cause flinching."
+  },
+  "heavy-slam": {
+    "id": "heavy-slam",
+    "name": "Heavy Slam",
+    "type": "steel",
+    "category": "physical",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 10,
+    "description": "The user slams into the target with its heavy body. The more the user outweighs the target, the greater its damage."
+  },
+  "miracle-eye": {
+    "id": "miracle-eye",
+    "name": "Miracle Eye",
+    "type": "psychic",
+    "category": "status",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 40,
+    "description": "Enables the user to hit a Ghost type with any type of move. It also enables the user to hit an evasive foe."
+  },
+  "guard-split": {
+    "id": "guard-split",
+    "name": "Guard Split",
+    "type": "psychic",
+    "category": "status",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 10,
+    "description": "The user employs its psychic power to average its Defense and Sp. Def stats with those of its target’s."
+  },
+  "superpower": {
+    "id": "superpower",
+    "name": "Superpower",
+    "type": "fighting",
+    "category": "physical",
+    "power": 120,
+    "accuracy": 100,
+    "pp": 5,
+    "description": "Boosts strength sharply, but lowers abilities."
+  },
+  "water-sport": {
+    "id": "water-sport",
+    "name": "Water Sport",
+    "type": "water",
+    "category": "status",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 15,
+    "description": "The user becomes soaked to raise resistance to fire."
+  },
+  "telekinesis": {
+    "id": "telekinesis",
+    "name": "Telekinesis",
+    "type": "psychic",
+    "category": "status",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 15,
+    "description": "The user makes the target float with its psychic power. The target is easier to hit for three turns."
+  },
+  "strength": {
+    "id": "strength",
+    "name": "Strength",
+    "type": "normal",
+    "category": "physical",
+    "power": 80,
+    "accuracy": 100,
+    "pp": 15,
+    "description": "A powerful physi­ cal attack."
+  },
+  "psyshock": {
+    "id": "psyshock",
+    "name": "Psyshock",
+    "type": "psychic",
+    "category": "special",
+    "power": 80,
+    "accuracy": 100,
+    "pp": 10,
+    "description": "The user materializes an odd psychic wave to attack the target. This attack does physical damage."
+  },
+  "mega-drain": {
+    "id": "mega-drain",
+    "name": "Mega Drain",
+    "type": "grass",
+    "category": "special",
+    "power": 40,
+    "accuracy": 100,
+    "pp": 15,
+    "description": "Steals 1/2 of the damage inflicted."
+  },
+  "overheat": {
+    "id": "overheat",
+    "name": "Overheat",
+    "type": "fire",
+    "category": "special",
+    "power": 130,
+    "accuracy": 90,
+    "pp": 5,
+    "description": "Allows a full-power attack, but sharply lowers SP. ATK."
+  },
+  "constrict": {
+    "id": "constrict",
+    "name": "Constrict",
+    "type": "normal",
+    "category": "physical",
+    "power": 10,
+    "accuracy": 100,
+    "pp": 35,
+    "description": "An attack that may lower SPEED."
+  },
+  "screech": {
+    "id": "screech",
+    "name": "Screech",
+    "type": "normal",
+    "category": "status",
+    "power": 0,
+    "accuracy": 85,
+    "pp": 40,
+    "effect": "stat_debuff",
+    "description": "Sharply reduces the foe's DEFENSE."
+  },
+  "avalanche": {
+    "id": "avalanche",
+    "name": "Avalanche",
+    "type": "ice",
+    "category": "physical",
+    "power": 60,
+    "accuracy": 100,
+    "pp": 10,
+    "description": "An attack move that inflicts double the damage if the user has been hurt by the foe in the same turn."
+  },
+  "aurora-beam": {
+    "id": "aurora-beam",
+    "name": "Aurora Beam",
+    "type": "ice",
+    "category": "special",
+    "power": 65,
+    "accuracy": 100,
+    "pp": 20,
+    "description": "An attack that may lower ATTACK."
+  },
+  "aqua-tail": {
+    "id": "aqua-tail",
+    "name": "Aqua Tail",
+    "type": "water",
+    "category": "physical",
+    "power": 90,
+    "accuracy": 90,
+    "pp": 10,
+    "description": "The user attacks by swinging its tail as if it were a vicious wave in a raging storm. "
+  },
+  "pay-day": {
+    "id": "pay-day",
+    "name": "Pay Day",
+    "type": "normal",
+    "category": "physical",
+    "power": 40,
+    "accuracy": 100,
+    "pp": 20,
+    "description": "Throws coins. Gets them back later."
+  },
+  "gunk-shot": {
+    "id": "gunk-shot",
+    "name": "Gunk Shot",
+    "type": "poison",
+    "category": "physical",
+    "power": 120,
+    "accuracy": 80,
+    "pp": 5,
+    "description": "The user shoots filthy garbage at the foe to attack. It may also poison the target."
+  },
+  "shell-smash": {
+    "id": "shell-smash",
+    "name": "Shell Smash",
+    "type": "normal",
+    "category": "status",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 15,
+    "description": "The user breaks its shell, lowering its Defense and Sp. Def stats but sharply raising Attack, Sp. Atk, and Speed stats."
+  },
+  "psycho-cut": {
+    "id": "psycho-cut",
+    "name": "Psycho Cut",
+    "type": "psychic",
+    "category": "physical",
+    "power": 70,
+    "accuracy": 100,
+    "pp": 20,
+    "description": "The user tears at the foe with blades formed by psychic power. It has a high critical-hit ratio."
+  },
+  "barrier": {
+    "id": "barrier",
+    "name": "Barrier",
+    "type": "psychic",
+    "category": "status",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 20,
+    "description": "Sharply increases user's DEFENSE."
+  },
+  "mud-sport": {
+    "id": "mud-sport",
+    "name": "Mud Sport",
+    "type": "ground",
+    "category": "status",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 15,
+    "description": "Covers the user in mud to raise electrical resistance."
+  },
+  "poison-gas": {
+    "id": "poison-gas",
+    "name": "Poison Gas",
+    "type": "poison",
+    "category": "status",
+    "power": 0,
+    "accuracy": 90,
+    "pp": 40,
+    "effect": "status_poison",
+    "description": "A move that may poison the foe."
+  },
+  "ally-switch": {
+    "id": "ally-switch",
+    "name": "Ally Switch",
+    "type": "psychic",
+    "category": "status",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 15,
+    "description": "The user teleports using a strange power and switches its place with one of its allies."
+  },
+  "poltergeist": {
+    "id": "poltergeist",
+    "name": "Poltergeist",
+    "type": "ghost",
+    "category": "physical",
+    "power": 110,
+    "accuracy": 90,
+    "pp": 5,
+    "description": "The user attacks the target by controlling the target’s item. The move fails if the target doesn’t have an item."
+  },
+  "meteor-beam": {
+    "id": "meteor-beam",
+    "name": "Meteor Beam",
+    "type": "rock",
+    "category": "special",
+    "power": 120,
+    "accuracy": 90,
+    "pp": 10,
+    "description": "In this two-turn attack, the user gathers space power and boosts its Sp. Atk stat, then attacks the target on the next turn."
+  },
+  "clear-smog": {
+    "id": "clear-smog",
+    "name": "Clear Smog",
+    "type": "poison",
+    "category": "special",
+    "power": 50,
+    "accuracy": 100,
+    "pp": 15,
+    "description": "The user attacks by throwing a clump of special mud. All status changes are returned to normal."
+  },
+  "reversal": {
+    "id": "reversal",
+    "name": "Reversal",
+    "type": "fighting",
+    "category": "physical",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 15,
+    "description": "Stronger if the user's HP is low."
+  },
+  "venom-drench": {
+    "id": "venom-drench",
+    "name": "Venom Drench",
+    "type": "poison",
+    "category": "status",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 20,
+    "description": "Opposing Pokémon are drenched in an odd poisonous liquid. This lowers the Attack, Sp. Atk, and Speed stats of a poisoned target."
+  },
+  "horn-attack": {
+    "id": "horn-attack",
+    "name": "Horn Attack",
+    "type": "normal",
+    "category": "physical",
+    "power": 65,
+    "accuracy": 100,
+    "pp": 25,
+    "description": "An attack using a horn to jab."
+  },
+  "mud-shot": {
+    "id": "mud-shot",
+    "name": "Mud Shot",
+    "type": "ground",
+    "category": "special",
+    "power": 55,
+    "accuracy": 95,
+    "pp": 15,
+    "description": "Hurls mud at the foe and reduces SPEED."
+  },
+  "water-pulse": {
+    "id": "water-pulse",
+    "name": "Water Pulse",
+    "type": "water",
+    "category": "special",
+    "power": 60,
+    "accuracy": 100,
+    "pp": 20,
+    "description": "Attacks with ultrasonic waves. May confuse the foe"
+  },
+  "vine-whip": {
+    "id": "vine-whip",
+    "name": "Vine Whip",
+    "type": "grass",
+    "category": "physical",
+    "power": 45,
+    "accuracy": 100,
+    "pp": 25,
+    "description": "Whips the foe with slender vines."
+  },
+  "dream-eater": {
+    "id": "dream-eater",
+    "name": "Dream Eater",
+    "type": "psychic",
+    "category": "special",
+    "power": 100,
+    "accuracy": 100,
+    "pp": 15,
+    "description": "Steals HP from a sleeping victim."
+  },
+  "me-first": {
+    "id": "me-first",
+    "name": "Me First",
+    "type": "normal",
+    "category": "status",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 20,
+    "description": "The user tries to cut ahead of the foe to steal and use the foe’s intended move with greater power."
+  },
+  "powder-snow": {
+    "id": "powder-snow",
+    "name": "Powder Snow",
+    "type": "ice",
+    "category": "special",
+    "power": 40,
+    "accuracy": 100,
+    "pp": 25,
+    "description": "An attack that may cause freezing."
+  },
+  "dragon-rush": {
+    "id": "dragon-rush",
+    "name": "Dragon Rush",
+    "type": "dragon",
+    "category": "physical",
+    "power": 100,
+    "accuracy": 75,
+    "pp": 10,
+    "description": "The user tackles the foe while exhibiting overwhelming menace. It may also make the target flinch."
+  },
+  "dragon-cheer": {
+    "id": "dragon-cheer",
+    "name": "Dragon Cheer",
+    "type": "dragon",
+    "category": "status",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 15,
+    "description": "The user raises its allies’ morale with a draconic cry so that their future attacks have a heightened chance of landing critical hits. This rouses Dragon types more."
+  },
+  "cross-chop": {
+    "id": "cross-chop",
+    "name": "Cross Chop",
+    "type": "fighting",
+    "category": "physical",
+    "power": 100,
+    "accuracy": 80,
+    "pp": 5,
+    "description": "Has a high criti­ cal hit ratio."
+  },
+  "copycat": {
+    "id": "copycat",
+    "name": "Copycat",
+    "type": "normal",
+    "category": "status",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 20,
+    "description": "The user mimics the move used immediately before it. The move fails if no other move has been used yet."
+  },
+  "acid-armor": {
+    "id": "acid-armor",
+    "name": "Acid Armor",
+    "type": "poison",
+    "category": "status",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 20,
+    "description": "Sharply raises the user's DEFENSE."
+  },
+  "megahorn": {
+    "id": "megahorn",
+    "name": "Megahorn",
+    "type": "bug",
+    "category": "physical",
+    "power": 120,
+    "accuracy": 85,
+    "pp": 10,
+    "description": "A powerful charge attack."
+  },
+  "gravity": {
+    "id": "gravity",
+    "name": "Gravity",
+    "type": "psychic",
+    "category": "status",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 5,
+    "description": "Gravity is intensified for five turns, making moves involving flying unusable and negating Levitation."
+  },
+  "mist": {
+    "id": "mist",
+    "name": "Mist",
+    "type": "ice",
+    "category": "status",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 30,
+    "description": "Prevents stat reduction."
+  },
+  "dragon-rage": {
+    "id": "dragon-rage",
+    "name": "Dragon Rage",
+    "type": "dragon",
+    "category": "special",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 10,
+    "description": "Always inflicts 40HP damage."
+  },
+  "ancient-power": {
+    "id": "ancient-power",
+    "name": "Ancient Power",
+    "type": "rock",
+    "category": "special",
+    "power": 60,
+    "accuracy": 100,
+    "pp": 5,
+    "description": "An attack that may raise all stats."
+  },
+  "stomping-tantrum": {
+    "id": "stomping-tantrum",
+    "name": "Stomping Tantrum",
+    "type": "ground",
+    "category": "physical",
+    "power": 75,
+    "accuracy": 100,
+    "pp": 10,
+    "description": "Driven by frustration, the user attacks the target. If the user’s previous move has failed, the power of this move doubles."
+  },
+  "mega-punch": {
+    "id": "mega-punch",
+    "name": "Mega Punch",
+    "type": "normal",
+    "category": "physical",
+    "power": 80,
+    "accuracy": 85,
+    "pp": 20,
+    "description": "A powerful punch thrown very hard."
+  },
+  "defog": {
+    "id": "defog",
+    "name": "Defog",
+    "type": "flying",
+    "category": "status",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 15,
+    "description": "Obstacles are moved, reducing the foe’s evasion stat. It can also be used to clear deep fog, etc."
+  },
+  "bulk-up": {
+    "id": "bulk-up",
+    "name": "Bulk Up",
+    "type": "fighting",
+    "category": "status",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 20,
+    "effect": "stat_buff",
+    "description": "Bulks up the body to boost both ATTACK and DEFENSE."
   }
 }
