@@ -4649,5 +4649,175 @@
     "accuracy": 90,
     "pp": 5,
     "description": "Comets are summoned down from the sky. The attack’s recoil sharply reduces the user’s Sp. Atk stat."
+  },
+  "metal-claw": {
+    "id": "metal-claw",
+    "name": "Metal Claw",
+    "type": "steel",
+    "category": "physical",
+    "power": 50,
+    "accuracy": 95,
+    "pp": 35,
+    "description": "An attack that may up user's ATTACK."
+  },
+  "water-spout": {
+    "id": "water-spout",
+    "name": "Water Spout",
+    "type": "water",
+    "category": "special",
+    "power": 150,
+    "accuracy": 100,
+    "pp": 5,
+    "description": "Inflicts more damage if the user’s HP is high."
+  },
+  "ice-spinner": {
+    "id": "ice-spinner",
+    "name": "Ice Spinner",
+    "type": "ice",
+    "category": "physical",
+    "power": 80,
+    "accuracy": 100,
+    "pp": 15,
+    "description": "The user covers its feet in thin ice and twirls around, slamming into the target. This move's spinning motion also destroys the terrain."
+  },
+  "coil": {
+    "id": "coil",
+    "name": "Coil",
+    "type": "poison",
+    "category": "status",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 20,
+    "description": "The user coils up and concentrates. This raises its Attack and Defense stats as well as its accuracy."
+  },
+  "flatter": {
+    "id": "flatter",
+    "name": "Flatter",
+    "type": "dark",
+    "category": "status",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 15,
+    "description": "Confuses the foe, but raises its SP. ATK."
+  },
+  "quash": {
+    "id": "quash",
+    "name": "Quash",
+    "type": "dark",
+    "category": "status",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 15,
+    "description": "The user suppresses the target and makes its move go last."
+  },
+  "present": {
+    "id": "present",
+    "name": "Present",
+    "type": "normal",
+    "category": "physical",
+    "power": 0,
+    "accuracy": 90,
+    "pp": 15,
+    "description": "A bomb that may restore HP."
+  },
+  "power-trip": {
+    "id": "power-trip",
+    "name": "Power Trip",
+    "type": "dark",
+    "category": "physical",
+    "power": 20,
+    "accuracy": 100,
+    "pp": 10,
+    "description": "The user boasts its strength and attacks the target. The more the user’s stats are raised, the greater the move’s power."
+  },
+  "snarl": {
+    "id": "snarl",
+    "name": "Snarl",
+    "type": "dark",
+    "category": "special",
+    "power": 55,
+    "accuracy": 95,
+    "pp": 15,
+    "description": "The user yells as if it is ranting about something, making the target’s Sp. Atk stat decrease."
+  },
+  "autotomize": {
+    "id": "autotomize",
+    "name": "Autotomize",
+    "type": "steel",
+    "category": "status",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 15,
+    "description": "The user sheds part of its body to make itself lighter and sharply raise its Speed stat."
+  },
+  "metal-sound": {
+    "id": "metal-sound",
+    "name": "Metal Sound",
+    "type": "steel",
+    "category": "status",
+    "power": 0,
+    "accuracy": 85,
+    "pp": 40,
+    "description": "Emits a horrible screech that sharply lowers SP. DEF."
+  },
+  "withdraw": {
+    "id": "withdraw",
+    "name": "Withdraw",
+    "type": "water",
+    "category": "status",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 40,
+    "description": "Heightens the user's DEFENSE."
+  },
+  "grudge": {
+    "id": "grudge",
+    "name": "Grudge",
+    "type": "ghost",
+    "category": "status",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 5,
+    "description": "If the user faints, deletes the PP of the final move."
+  },
+  "vice-grip": {
+    "id": "vice-grip",
+    "name": "Vice Grip",
+    "type": "normal",
+    "category": "physical",
+    "power": 55,
+    "accuracy": 100,
+    "pp": 30,
+    "description": "Grips with power­ ful pincers."
+  },
+  "spark": {
+    "id": "spark",
+    "name": "Spark",
+    "type": "electric",
+    "category": "physical",
+    "power": 65,
+    "accuracy": 100,
+    "pp": 20,
+    "description": "An attack that may cause paralysis."
+  },
+  "bestow": {
+    "id": "bestow",
+    "name": "Bestow",
+    "type": "normal",
+    "category": "status",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 15,
+    "description": "The user passes its held item to the target when the target isn’t holding an item."
+  },
+  "acupressure": {
+    "id": "acupressure",
+    "name": "Acupressure",
+    "type": "normal",
+    "category": "status",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 30,
+    "description": "The user applies pressure to stress points, sharply boosting one of its stats."
   }
 }

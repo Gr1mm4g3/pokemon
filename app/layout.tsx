@@ -1,13 +1,7 @@
-import {
-  ClerkProvider,
-  SignInButton,
-  SignUpButton,
-  Show,
-  UserButton,
-} from "@clerk/nextjs";
+import { ClerkProvider } from "@clerk/nextjs";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { Suspense } from "react";
+import { AuthButtons } from "@/components/auth/AuthButtons";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -56,31 +50,7 @@ export default function RootLayout({
               </div>
             </div>
 
-            <div className="flex items-center gap-3">
-              <Suspense
-                fallback={
-                  <div className="h-9 w-20 animate-pulse rounded-full bg-zinc-800" />
-                }
-              >
-                <Show when="signed-out">
-                  <SignInButton mode="modal">
-                    <button className="px-4 py-1.5 text-xs font-semibold rounded-xl border border-zinc-700 bg-zinc-900 hover:bg-zinc-800 text-zinc-200 transition-colors">
-                      Sign In
-                    </button>
-                  </SignInButton>
-                  <SignUpButton mode="modal">
-                    <button className="px-4 py-1.5 text-xs font-bold rounded-xl bg-red-600 hover:bg-red-500 text-white shadow-lg shadow-red-600/30 transition-colors">
-                      Sign Up
-                    </button>
-                  </SignUpButton>
-                </Show>
-                <Show when="signed-in">
-                  <div className="flex items-center gap-3">
-                    <UserButton />
-                  </div>
-                </Show>
-              </Suspense>
-            </div>
+            <AuthButtons />
           </header>
 
           <main className="flex-1 flex flex-col">{children}</main>
