@@ -106,6 +106,26 @@ export default function Home() {
     }
   };
 
+  const [randomizingMoves, setRandomizingMoves] = useState<boolean>(false);
+
+  const handleRandomizeMoves = async () => {
+    setRandomizingMoves(true);
+    try {
+      await fetch("/api/pokemon/randomize-moves", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ randomizeAll: true }),
+      });
+      if (tournament) {
+        await fetchTournamentDetails(tournament.id);
+      }
+    } catch (err) {
+      console.error("Failed to randomize moves:", err);
+    } finally {
+      setRandomizingMoves(false);
+    }
+  };
+
   return (
     <div className="flex-1 w-full max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-8 space-y-8">
       {/* Tournament Overview & Control Hero Banner */}
@@ -143,6 +163,16 @@ export default function Home() {
 
           {/* Action Buttons */}
           <div className="flex flex-wrap items-center gap-3">
+            <button
+              onClick={handleRandomizeMoves}
+              disabled={randomizingMoves}
+              className="flex items-center gap-2 px-3.5 py-2.5 rounded-xl bg-zinc-900 border border-zinc-700/70 hover:bg-zinc-800 text-zinc-200 text-xs font-semibold shadow-sm transition-all hover:scale-105 active:scale-95 disabled:opacity-50"
+              title="Pick 4 fresh random moves for all 151 Pokémon from their individual move pools"
+            >
+              <Shuffle className={`w-3.5 h-3.5 text-emerald-400 ${randomizingMoves ? "animate-spin" : ""}`} />
+              {randomizingMoves ? "Randomizing..." : "Re-roll Moves"}
+            </button>
+
             <button
               onClick={() => setIsQuickBattleOpen(true)}
               className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-zinc-900 border border-zinc-700/70 hover:bg-zinc-800 text-zinc-200 text-xs font-semibold shadow-sm transition-all hover:scale-105 active:scale-95"

@@ -13,7 +13,10 @@ export type PokemonType =
   | "bug"
   | "rock"
   | "ghost"
-  | "dragon";
+  | "dragon"
+  | "steel"
+  | "dark"
+  | "fairy";
 
 export type MoveCategory = "physical" | "special" | "status";
 
@@ -27,7 +30,16 @@ export interface Move {
   power: number; // 0 for status
   accuracy: number; // 0-100
   pp: number;
-  effect?: "heal_50" | "heal_100_sleep" | "status_sleep" | "status_poison" | "status_paralyze" | "leech_seed";
+  effect?:
+    | "heal_50"
+    | "heal_100_sleep"
+    | "status_sleep"
+    | "status_poison"
+    | "status_paralyze"
+    | "status_burn"
+    | "leech_seed"
+    | "stat_buff"
+    | "stat_debuff";
   description?: string;
 }
 

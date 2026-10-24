@@ -1,6 +1,6 @@
 import { PrismaClient } from "@prisma/client";
-import { MOVES_CATALOG } from "../lib/battle/moves";
-import { Move, PokemonType } from "../lib/battle/types";
+import { generateRandomMoveset } from "../lib/battle/movePoolResolver";
+import { PokemonType } from "../lib/battle/types";
 
 const prisma = new PrismaClient();
 
@@ -34,77 +34,13 @@ interface PokeApiPokemon {
   }>;
 }
 
-function selectMovesForPokemon(
-  types: PokemonType[],
-  availableMoveNames: Set<string>
-): Move[] {
-  const chosen: Move[] = [];
-  const chosenIds = new Set<string>();
-
-  const addMove = (m: Move | undefined) => {
-    if (m && !chosenIds.has(m.id)) {
-      chosen.push(m);
-      chosenIds.add(m.id);
-    }
-  };
-
-  // 1. Check for signature recovery or status moves learned by this pokemon
-  for (const moveName of availableMoveNames) {
-    const normalized = moveName.replace(/-/g, "_");
-    const move = MOVES_CATALOG[normalized];
-    if (move && move.category === "status" && chosen.length < 2) {
-      addMove(move);
-    }
-  }
-
-  // 2. Add STAB attacking moves matching the pokemon's types
-  for (const t of types) {
-    const stabCandidates = Object.values(MOVES_CATALOG).filter(
-      (m) =>
-        m.type === t &&
-        m.category !== "status" &&
-        (availableMoveNames.has(m.id.replace(/_/g, "-")) || availableMoveNames.has(m.id))
-    );
-    // Sort by power desc
-    stabCandidates.sort((a, b) => b.power - a.power);
-    if (stabCandidates[0]) {
-      addMove(stabCandidates[0]);
-    }
-  }
-
-  // 3. Add any other strong moves learned from the catalog
-  const otherMoves = Object.values(MOVES_CATALOG).filter(
-    (m) =>
-      m.category !== "status" &&
-      (availableMoveNames.has(m.id.replace(/_/g, "-")) || availableMoveNames.has(m.id))
-  );
-  otherMoves.sort((a, b) => b.power - a.power);
-  for (const m of otherMoves) {
-    if (chosen.length >= 4) break;
-    addMove(m);
-  }
-
-  // 4. If still under 4 moves, fill with standard type-matching or universal moves
-  const universalFallbacks = [
-    MOVES_CATALOG.tackle,
-    MOVES_CATALOG.body_slam,
-    MOVES_CATALOG.quick_attack,
-    MOVES_CATALOG.hyper_beam,
-  ];
-
-  for (const fb of universalFallbacks) {
-    if (chosen.length >= 4) break;
-    addMove(fb);
-  }
-
-  return chosen.slice(0, 4);
-}
-
-export async function seedPokemonRoster() {
-  console.log("Starting PokeAPI Seeder for the first 151 Pokémon...");
+export async function seedPokemonRoster(forceRandomize: boolean = true) {
+  console.log("Starting PokeAPI Seeder with unique random movesets from each Pokémon's pool...");
 
   const existingCount = await prisma.pokemonRoster.count();
-  if (existingCount >= 151) {
+  const shouldRefetch = existingCount < 151 || forceRandomize;
+
+  if (!shouldRefetch) {
     console.log(`PokemonRoster already contains ${existingCount} Pokémon. Seeding skipped.`);
     return;
   }
@@ -149,8 +85,11 @@ export async function seedPokemonRoster() {
             speed: statMap["speed"] || 50,
           };
 
-          const learnedMoveNames = new Set(data.moves.map((m) => m.move.name));
-          const moves = selectMovesForPokemon(types, learnedMoveNames);
+          // Full move pool for this specific Pokemon
+          const movePool = data.moves.map((m) => m.move.name);
+
+          // Randomly select 4 moves from this Pokemon's individual move pool
+          const moves = await generateRandomMoveset(movePool, types);
 
           await prisma.pokemonRoster.upsert({
             where: { id },
@@ -160,6 +99,7 @@ export async function seedPokemonRoster() {
               types: JSON.stringify(types),
               baseStats: JSON.stringify(baseStats),
               moves: JSON.stringify(moves),
+              movePool: JSON.stringify(movePool),
             },
             create: {
               id,
@@ -168,11 +108,14 @@ export async function seedPokemonRoster() {
               types: JSON.stringify(types),
               baseStats: JSON.stringify(baseStats),
               moves: JSON.stringify(moves),
+              movePool: JSON.stringify(movePool),
               eloRating: 1000.0,
             },
           });
 
-          console.log(`[#${id}] ${name} seeded successfully (${types.join("/")})`);
+          console.log(
+            `[#${id}] ${name} seeded with moves: ${moves.map((m) => m.name).join(", ")}`
+          );
         } catch (err) {
           console.error(`Error processing Pokemon #${id}:`, err);
         }
@@ -181,11 +124,11 @@ export async function seedPokemonRoster() {
   }
 
   const finalCount = await prisma.pokemonRoster.count();
-  console.log(`Seeding complete! Total Pokémon in database: ${finalCount}`);
+  console.log(`Seeding complete! Total Pokémon with unique random moves: ${finalCount}`);
 }
 
 if (require.main === module || process.argv[1]?.endsWith("seed.ts")) {
-  seedPokemonRoster()
+  seedPokemonRoster(true)
     .catch((e) => {
       console.error(e);
       process.exit(1);

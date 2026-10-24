@@ -424,6 +424,97 @@ export function executeMove(
     return logs;
   }
 
+  if (move.effect === "status_burn") {
+    if (defender.status === "healthy" && !defender.types.includes("fire")) {
+      defender.status = "burn";
+      logs.push({
+        turnNumber,
+        attackerId: attacker.id,
+        attackerName: attacker.name,
+        defenderId: defender.id,
+        defenderName: defender.name,
+        actionType: "move",
+        moveName: move.name,
+        moveType: move.type,
+        damageDealt: 0,
+        statusApplied: "burn",
+        attackerHpRemaining: attacker.currentHp,
+        defenderHpRemaining: defender.currentHp,
+        message: `${attacker.name} used ${move.name}! ${defender.name} was burned!`,
+      });
+    } else {
+      logs.push({
+        turnNumber,
+        attackerId: attacker.id,
+        attackerName: attacker.name,
+        defenderId: defender.id,
+        defenderName: defender.name,
+        actionType: "move",
+        moveName: move.name,
+        moveType: move.type,
+        damageDealt: 0,
+        attackerHpRemaining: attacker.currentHp,
+        defenderHpRemaining: defender.currentHp,
+        message: `${attacker.name} used ${move.name}, but it failed!`,
+      });
+    }
+    return logs;
+  }
+
+  if (move.effect === "stat_buff") {
+    logs.push({
+      turnNumber,
+      attackerId: attacker.id,
+      attackerName: attacker.name,
+      defenderId: defender.id,
+      defenderName: defender.name,
+      actionType: "move",
+      moveName: move.name,
+      moveType: move.type,
+      damageDealt: 0,
+      attackerHpRemaining: attacker.currentHp,
+      defenderHpRemaining: defender.currentHp,
+      message: `${attacker.name} used ${move.name}! ${attacker.name}'s battle stats rose!`,
+    });
+    return logs;
+  }
+
+  if (move.effect === "stat_debuff") {
+    logs.push({
+      turnNumber,
+      attackerId: attacker.id,
+      attackerName: attacker.name,
+      defenderId: defender.id,
+      defenderName: defender.name,
+      actionType: "move",
+      moveName: move.name,
+      moveType: move.type,
+      damageDealt: 0,
+      attackerHpRemaining: attacker.currentHp,
+      defenderHpRemaining: defender.currentHp,
+      message: `${attacker.name} used ${move.name}! ${defender.name}'s stats were lowered!`,
+    });
+    return logs;
+  }
+
+  if (move.category === "status" || move.power === 0) {
+    logs.push({
+      turnNumber,
+      attackerId: attacker.id,
+      attackerName: attacker.name,
+      defenderId: defender.id,
+      defenderName: defender.name,
+      actionType: "move",
+      moveName: move.name,
+      moveType: move.type,
+      damageDealt: 0,
+      attackerHpRemaining: attacker.currentHp,
+      defenderHpRemaining: defender.currentHp,
+      message: `${attacker.name} used ${move.name}!`,
+    });
+    return logs;
+  }
+
   // 4. Standard Damage Dealing Move
   const { damage, isCritical, typeEffectiveness } = calculateDamage(
     attacker,
@@ -492,6 +583,23 @@ export function handleStatusTicks(
       attackerHpRemaining: pokemon.currentHp,
       defenderHpRemaining: opponent.currentHp,
       message: `${pokemon.name} was hurt by poison! (-${poisonDamage} HP)`,
+    });
+  }
+
+  if (pokemon.status === "burn") {
+    const burnDamage = Math.max(1, Math.floor(pokemon.maxHp / 16));
+    pokemon.currentHp = Math.max(0, pokemon.currentHp - burnDamage);
+    logs.push({
+      turnNumber,
+      attackerId: pokemon.id,
+      attackerName: pokemon.name,
+      defenderId: pokemon.id,
+      defenderName: pokemon.name,
+      actionType: "status_tick",
+      damageDealt: burnDamage,
+      attackerHpRemaining: pokemon.currentHp,
+      defenderHpRemaining: opponent.currentHp,
+      message: `${pokemon.name} was hurt by its burn! (-${burnDamage} HP)`,
     });
   }
 

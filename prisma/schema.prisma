@@ -20,7 +20,8 @@ model PokemonRoster {
   spriteUrl   String
   types       String   // JSON string array e.g. ["grass", "poison"]
   baseStats   String   // JSON string e.g. {"hp": 45, "attack": 49, "defense": 49, "spAttack": 65, "spDefense": 65, "speed": 45}
-  moves       String   // JSON string of move definitions
+  moves       String   // JSON string of active 4 moves
+  movePool    String?  // JSON string array of all move names in this Pokemon's move pool
   eloRating   Float    @default(1000.0)
 
   matchesAsA  Match[]  @relation("PokemonA")

@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import { Swords, X, Sparkles, Shuffle } from "lucide-react";
+import { Swords, X, Sparkles, Shuffle, Dices } from "lucide-react";
 import { TypeBadge } from "../ui/TypeBadge";
 
 interface QuickBattleModalProps {
@@ -20,17 +20,23 @@ export function QuickBattleModal({
   const [pAId, setPAId] = useState<number>(25); // Pikachu default
   const [pBId, setPBId] = useState<number>(6); // Charizard default
   const [loading, setLoading] = useState<boolean>(false);
+  const [reRolling, setReRolling] = useState<boolean>(false);
+
+  const fetchPokemon = async () => {
+    try {
+      const res = await fetch("/api/pokemon");
+      const data = await res.json();
+      if (data.pokemon) setPokemonList(data.pokemon);
+    } catch (err) {
+      console.error(err);
+    }
+  };
 
   useEffect(() => {
-    if (isOpen && pokemonList.length === 0) {
-      fetch("/api/pokemon")
-        .then((res) => res.json())
-        .then((data) => {
-          if (data.pokemon) setPokemonList(data.pokemon);
-        })
-        .catch(console.error);
+    if (isOpen) {
+      fetchPokemon();
     }
-  }, [isOpen, pokemonList.length]);
+  }, [isOpen]);
 
   if (!isOpen) return null;
 
@@ -40,6 +46,29 @@ export function QuickBattleModal({
     while (id2 === id1) id2 = Math.floor(Math.random() * 151) + 1;
     setPAId(id1);
     setPBId(id2);
+  };
+
+  const handleRerollFighterMoves = async () => {
+    setReRolling(true);
+    try {
+      await Promise.all([
+        fetch("/api/pokemon/randomize-moves", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ pokemonId: pAId }),
+        }),
+        fetch("/api/pokemon/randomize-moves", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ pokemonId: pBId }),
+        }),
+      ]);
+      await fetchPokemon();
+    } catch (err) {
+      console.error("Failed to re-roll fighter moves:", err);
+    } finally {
+      setReRolling(false);
+    }
   };
 
   const handleStartBattle = async () => {
@@ -84,7 +113,7 @@ export function QuickBattleModal({
         </div>
 
         {/* Selected Pair Preview */}
-        <div className="grid grid-cols-2 gap-4 items-center">
+        <div className="grid grid-cols-2 gap-4 items-start">
           {/* Pokemon A */}
           <div className="flex flex-col items-center p-4 rounded-2xl bg-zinc-900/60 border border-zinc-800/80">
             {pA ? (
@@ -103,8 +132,26 @@ export function QuickBattleModal({
                     <TypeBadge key={t} type={t} size="sm" />
                   ))}
                 </div>
-                <div className="text-xs font-mono text-zinc-400">
+                <div className="text-xs font-mono text-zinc-400 mb-2">
                   Elo {pA.eloRating}
+                </div>
+
+                {/* Move list */}
+                <div className="w-full space-y-1 mb-2">
+                  <span className="text-[10px] font-mono uppercase text-zinc-500 font-bold">
+                    Random Moveset:
+                  </span>
+                  <div className="grid grid-cols-2 gap-1 text-[10px]">
+                    {pA.moves?.map((m: any) => (
+                      <span
+                        key={m.id}
+                        className="bg-zinc-800/90 text-zinc-300 px-1.5 py-0.5 rounded border border-zinc-700/60 truncate"
+                        title={m.name}
+                      >
+                        {m.name}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </>
             ) : (
@@ -115,7 +162,7 @@ export function QuickBattleModal({
             <select
               value={pAId}
               onChange={(e) => setPAId(parseInt(e.target.value, 10))}
-              className="mt-3 w-full bg-zinc-800 text-xs text-zinc-200 border border-zinc-700 rounded-lg p-2 focus:outline-none"
+              className="mt-2 w-full bg-zinc-800 text-xs text-zinc-200 border border-zinc-700 rounded-lg p-2 focus:outline-none"
             >
               {pokemonList.map((p) => (
                 <option key={p.id} value={p.id}>
@@ -143,8 +190,26 @@ export function QuickBattleModal({
                     <TypeBadge key={t} type={t} size="sm" />
                   ))}
                 </div>
-                <div className="text-xs font-mono text-zinc-400">
+                <div className="text-xs font-mono text-zinc-400 mb-2">
                   Elo {pB.eloRating}
+                </div>
+
+                {/* Move list */}
+                <div className="w-full space-y-1 mb-2">
+                  <span className="text-[10px] font-mono uppercase text-zinc-500 font-bold">
+                    Random Moveset:
+                  </span>
+                  <div className="grid grid-cols-2 gap-1 text-[10px]">
+                    {pB.moves?.map((m: any) => (
+                      <span
+                        key={m.id}
+                        className="bg-zinc-800/90 text-zinc-300 px-1.5 py-0.5 rounded border border-zinc-700/60 truncate"
+                        title={m.name}
+                      >
+                        {m.name}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </>
             ) : (
@@ -155,7 +220,7 @@ export function QuickBattleModal({
             <select
               value={pBId}
               onChange={(e) => setPBId(parseInt(e.target.value, 10))}
-              className="mt-3 w-full bg-zinc-800 text-xs text-zinc-200 border border-zinc-700 rounded-lg p-2 focus:outline-none"
+              className="mt-2 w-full bg-zinc-800 text-xs text-zinc-200 border border-zinc-700 rounded-lg p-2 focus:outline-none"
             >
               {pokemonList.map((p) => (
                 <option key={p.id} value={p.id}>
@@ -167,15 +232,27 @@ export function QuickBattleModal({
         </div>
 
         {/* Action Buttons */}
-        <div className="flex items-center justify-between pt-2">
-          <button
-            onClick={handleRandomize}
-            type="button"
-            className="flex items-center gap-1.5 px-3 py-2 text-xs font-semibold rounded-xl bg-zinc-900 border border-zinc-700 text-zinc-300 hover:bg-zinc-800 transition-colors"
-          >
-            <Shuffle className="w-3.5 h-3.5" />
-            Randomize Pair
-          </button>
+        <div className="flex flex-wrap items-center justify-between gap-3 pt-2">
+          <div className="flex items-center gap-2">
+            <button
+              onClick={handleRandomize}
+              type="button"
+              className="flex items-center gap-1.5 px-3 py-2 text-xs font-semibold rounded-xl bg-zinc-900 border border-zinc-700 text-zinc-300 hover:bg-zinc-800 transition-colors"
+            >
+              <Shuffle className="w-3.5 h-3.5" />
+              Randomize Pair
+            </button>
+
+            <button
+              onClick={handleRerollFighterMoves}
+              disabled={reRolling}
+              type="button"
+              className="flex items-center gap-1.5 px-3 py-2 text-xs font-semibold rounded-xl bg-zinc-900 border border-zinc-700 text-emerald-400 hover:bg-zinc-800 transition-colors disabled:opacity-50"
+            >
+              <Dices className={`w-3.5 h-3.5 ${reRolling ? "animate-spin" : ""}`} />
+              {reRolling ? "Re-rolling..." : "Re-roll Moves"}
+            </button>
+          </div>
 
           <button
             onClick={handleStartBattle}
