@@ -3776,5 +3776,878 @@
     "pp": 20,
     "effect": "stat_buff",
     "description": "Bulks up the body to boost both ATTACK and DEFENSE."
+  },
+  "fake-out": {
+    "id": "fake-out",
+    "name": "Fake Out",
+    "type": "normal",
+    "category": "physical",
+    "power": 40,
+    "accuracy": 100,
+    "pp": 10,
+    "description": "A 1st-turn, 1st-strike move that causes flinching."
+  },
+  "fire-pledge": {
+    "id": "fire-pledge",
+    "name": "Fire Pledge",
+    "type": "fire",
+    "category": "special",
+    "power": 80,
+    "accuracy": 100,
+    "pp": 10,
+    "description": "A column of fire hits opposing Pokémon. When used with its Grass equivalent, its damage increases into a vast sea of fire."
+  },
+  "grassy-glide": {
+    "id": "grassy-glide",
+    "name": "Grassy Glide",
+    "type": "grass",
+    "category": "physical",
+    "power": 55,
+    "accuracy": 100,
+    "pp": 20,
+    "description": "Gliding on the ground, the user attacks the target. This move always goes first on Grassy Terrain."
+  },
+  "mirror-coat": {
+    "id": "mirror-coat",
+    "name": "Mirror Coat",
+    "type": "psychic",
+    "category": "special",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 20,
+    "description": "Counters a SPCL. ATK. move double."
+  },
+  "wave-crash": {
+    "id": "wave-crash",
+    "name": "Wave Crash",
+    "type": "water",
+    "category": "physical",
+    "power": 120,
+    "accuracy": 100,
+    "pp": 10,
+    "description": "The user shrouds itself in water and slams into the target with its whole body to inflict damage. This also damages the user and raises the user’s action speed."
+  },
+  "brave-bird": {
+    "id": "brave-bird",
+    "name": "Brave Bird",
+    "type": "flying",
+    "category": "physical",
+    "power": 120,
+    "accuracy": 100,
+    "pp": 15,
+    "description": "The user tucks in its wings and charges from a low altitude. The user also takes serious damage."
+  },
+  "taunt": {
+    "id": "taunt",
+    "name": "Taunt",
+    "type": "dark",
+    "category": "status",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 20,
+    "description": "Taunts the foe into only using attack moves."
+  },
+  "dual-wingbeat": {
+    "id": "dual-wingbeat",
+    "name": "Dual Wingbeat",
+    "type": "flying",
+    "category": "physical",
+    "power": 40,
+    "accuracy": 90,
+    "pp": 10,
+    "description": "The user slams the target with its wings. The target is hit twice in a row."
+  },
+  "mirror-move": {
+    "id": "mirror-move",
+    "name": "Mirror Move",
+    "type": "flying",
+    "category": "status",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 20,
+    "description": "Counters with the same move."
+  },
+  "poison-tail": {
+    "id": "poison-tail",
+    "name": "Poison Tail",
+    "type": "poison",
+    "category": "physical",
+    "power": 50,
+    "accuracy": 100,
+    "pp": 25,
+    "description": "Has a high critical-hit ratio. May also poison."
+  },
+  "night-slash": {
+    "id": "night-slash",
+    "name": "Night Slash",
+    "type": "dark",
+    "category": "physical",
+    "power": 70,
+    "accuracy": 100,
+    "pp": 15,
+    "description": "The user slashes the foe the instant an opportunity arises. It has a high critical-hit ratio."
+  },
+  "poison-fang": {
+    "id": "poison-fang",
+    "name": "Poison Fang",
+    "type": "poison",
+    "category": "physical",
+    "power": 50,
+    "accuracy": 100,
+    "pp": 15,
+    "description": "A sharp-fanged attack. May badly poison the foe."
+  },
+  "sand-tomb": {
+    "id": "sand-tomb",
+    "name": "Sand Tomb",
+    "type": "ground",
+    "category": "physical",
+    "power": 35,
+    "accuracy": 85,
+    "pp": 15,
+    "description": "Traps and hurts the foe in quicksand for 2 to 5 turns."
+  },
+  "burning-jealousy": {
+    "id": "burning-jealousy",
+    "name": "Burning Jealousy",
+    "type": "fire",
+    "category": "special",
+    "power": 70,
+    "accuracy": 100,
+    "pp": 5,
+    "description": "The user attacks with energy from jealousy. This leaves all opposing Pokémon that have had their stats boosted during the turn with a burn."
+  },
+  "covet": {
+    "id": "covet",
+    "name": "Covet",
+    "type": "normal",
+    "category": "physical",
+    "power": 60,
+    "accuracy": 100,
+    "pp": 25,
+    "description": "Cutely begs to obtain an item held by the foe."
+  },
+  "charge-beam": {
+    "id": "charge-beam",
+    "name": "Charge Beam",
+    "type": "electric",
+    "category": "special",
+    "power": 50,
+    "accuracy": 90,
+    "pp": 10,
+    "description": "The user fires a concentrated bundle of electricity. It may also raise the user’s Sp. Atk stat."
+  },
+  "pain-split": {
+    "id": "pain-split",
+    "name": "Pain Split",
+    "type": "normal",
+    "category": "status",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 20,
+    "description": "Adds user & foe's HPs. Shares total."
+  },
+  "head-smash": {
+    "id": "head-smash",
+    "name": "Head Smash",
+    "type": "rock",
+    "category": "physical",
+    "power": 150,
+    "accuracy": 80,
+    "pp": 5,
+    "description": "The user delivers a life-endangering head butt at full power. The user also takes terrible damage."
+  },
+  "gastro-acid": {
+    "id": "gastro-acid",
+    "name": "Gastro Acid",
+    "type": "poison",
+    "category": "status",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 10,
+    "description": "The user hurls up its stomach acids on the foe. The fluid eliminates the effect of the foe’s ability."
+  },
+  "morning-sun": {
+    "id": "morning-sun",
+    "name": "Morning Sun",
+    "type": "normal",
+    "category": "status",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 5,
+    "effect": "heal_50",
+    "description": "Restores HP (varies by time)."
+  },
+  "grassy-terrain": {
+    "id": "grassy-terrain",
+    "name": "Grassy Terrain",
+    "type": "grass",
+    "category": "status",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 10,
+    "description": "The user turns the ground under everyone’s feet to grass for five turns. This restores the HP of Pokémon on the ground a little every turn."
+  },
+  "worry-seed": {
+    "id": "worry-seed",
+    "name": "Worry Seed",
+    "type": "grass",
+    "category": "status",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 10,
+    "description": "A seed that causes worry is planted on the foe. It prevents sleep by making its ability Insomnia."
+  },
+  "sludge-wave": {
+    "id": "sludge-wave",
+    "name": "Sludge Wave",
+    "type": "poison",
+    "category": "special",
+    "power": 95,
+    "accuracy": 100,
+    "pp": 10,
+    "description": "It swamps the area around the user with a giant sludge wave. It may also poison those hit."
+  },
+  "howl": {
+    "id": "howl",
+    "name": "Howl",
+    "type": "normal",
+    "category": "status",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 40,
+    "description": "Howls to raise the spirit and boosts ATTACK."
+  },
+  "ember": {
+    "id": "ember",
+    "name": "Ember",
+    "type": "fire",
+    "category": "special",
+    "power": 40,
+    "accuracy": 100,
+    "pp": 25,
+    "description": "An attack that may inflict a burn."
+  },
+  "close-combat": {
+    "id": "close-combat",
+    "name": "Close Combat",
+    "type": "fighting",
+    "category": "physical",
+    "power": 120,
+    "accuracy": 100,
+    "pp": 5,
+    "description": "The user fights the foe in close without guarding itself. It also cuts the user’s Defense and Sp. Def."
+  },
+  "wrap": {
+    "id": "wrap",
+    "name": "Wrap",
+    "type": "normal",
+    "category": "physical",
+    "power": 15,
+    "accuracy": 90,
+    "pp": 20,
+    "description": "Squeezes the foe for 2-5 turns."
+  },
+  "bullet-punch": {
+    "id": "bullet-punch",
+    "name": "Bullet Punch",
+    "type": "steel",
+    "category": "physical",
+    "power": 40,
+    "accuracy": 100,
+    "pp": 30,
+    "description": "The user strikes with a tough punch as fast as a bullet. This move always goes first."
+  },
+  "speed-swap": {
+    "id": "speed-swap",
+    "name": "Speed Swap",
+    "type": "psychic",
+    "category": "status",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 10,
+    "description": "The user exchanges Speed stats with the target."
+  },
+  "psybeam": {
+    "id": "psybeam",
+    "name": "Psybeam",
+    "type": "psychic",
+    "category": "special",
+    "power": 65,
+    "accuracy": 100,
+    "pp": 20,
+    "description": "An attack that may confuse the foe."
+  },
+  "stomp": {
+    "id": "stomp",
+    "name": "Stomp",
+    "type": "normal",
+    "category": "physical",
+    "power": 65,
+    "accuracy": 100,
+    "pp": 20,
+    "description": "An attack that may cause flinching."
+  },
+  "play-rough": {
+    "id": "play-rough",
+    "name": "Play Rough",
+    "type": "fairy",
+    "category": "physical",
+    "power": 90,
+    "accuracy": 90,
+    "pp": 10,
+    "description": "The user plays rough with the target and attacks it. This may also lower the target’s Attack stat."
+  },
+  "flash-cannon": {
+    "id": "flash-cannon",
+    "name": "Flash Cannon",
+    "type": "steel",
+    "category": "special",
+    "power": 80,
+    "accuracy": 100,
+    "pp": 10,
+    "description": "The user gathers all its light energy and releases it at once. It may also lower the foe’s Sp. Def stat."
+  },
+  "icicle-spear": {
+    "id": "icicle-spear",
+    "name": "Icicle Spear",
+    "type": "ice",
+    "category": "physical",
+    "power": 25,
+    "accuracy": 100,
+    "pp": 30,
+    "description": "Attacks the foe by firing 2 to 5 icicles in a row."
+  },
+  "ice-shard": {
+    "id": "ice-shard",
+    "name": "Ice Shard",
+    "type": "ice",
+    "category": "physical",
+    "power": 40,
+    "accuracy": 100,
+    "pp": 30,
+    "description": "The user flash freezes chunks of ice and hurls them. This move always goes first."
+  },
+  "twineedle": {
+    "id": "twineedle",
+    "name": "Twineedle",
+    "type": "bug",
+    "category": "physical",
+    "power": 25,
+    "accuracy": 100,
+    "pp": 20,
+    "description": "Jabs the foe twice using stingers."
+  },
+  "perish-song": {
+    "id": "perish-song",
+    "name": "Perish Song",
+    "type": "normal",
+    "category": "status",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 5,
+    "description": "Both user and foe faint in 3 turns."
+  },
+  "skill-swap": {
+    "id": "skill-swap",
+    "name": "Skill Swap",
+    "type": "psychic",
+    "category": "status",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 10,
+    "description": "The user swaps special abilities with the target."
+  },
+  "nightmare": {
+    "id": "nightmare",
+    "name": "Nightmare",
+    "type": "ghost",
+    "category": "status",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 15,
+    "description": "A sleeper loses 1/4 HP every turn."
+  },
+  "sludge": {
+    "id": "sludge",
+    "name": "Sludge",
+    "type": "poison",
+    "category": "special",
+    "power": 65,
+    "accuracy": 100,
+    "pp": 20,
+    "description": "An attack that may poison the foe."
+  },
+  "smelling-salts": {
+    "id": "smelling-salts",
+    "name": "Smelling Salts",
+    "type": "normal",
+    "category": "physical",
+    "power": 70,
+    "accuracy": 100,
+    "pp": 10,
+    "description": "Powerful against paralyzed foes, but also heals them."
+  },
+  "ice-fang": {
+    "id": "ice-fang",
+    "name": "Ice Fang",
+    "type": "ice",
+    "category": "physical",
+    "power": 65,
+    "accuracy": 95,
+    "pp": 15,
+    "description": "The user bites with cold-infused fangs. It may also make the foe flinch or freeze. "
+  },
+  "rapid-spin": {
+    "id": "rapid-spin",
+    "name": "Rapid Spin",
+    "type": "normal",
+    "category": "physical",
+    "power": 50,
+    "accuracy": 100,
+    "pp": 40,
+    "description": "A high-speed spinning attack."
+  },
+  "trump-card": {
+    "id": "trump-card",
+    "name": "Trump Card",
+    "type": "normal",
+    "category": "special",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 5,
+    "description": "The fewer PP this move has, the more power it has for attack. "
+  },
+  "draining-kiss": {
+    "id": "draining-kiss",
+    "name": "Draining Kiss",
+    "type": "fairy",
+    "category": "special",
+    "power": 50,
+    "accuracy": 100,
+    "pp": 10,
+    "description": "The user steals the target’s energy with a kiss. The user’s HP is restored by over half of the damage taken by the target."
+  },
+  "expanding-force": {
+    "id": "expanding-force",
+    "name": "Expanding Force",
+    "type": "psychic",
+    "category": "special",
+    "power": 80,
+    "accuracy": 100,
+    "pp": 10,
+    "description": "The user attacks the target with its psychic power. This move’s power goes up and damages all opposing Pokémon on Psychic Terrain."
+  },
+  "flame-wheel": {
+    "id": "flame-wheel",
+    "name": "Flame Wheel",
+    "type": "fire",
+    "category": "physical",
+    "power": 60,
+    "accuracy": 100,
+    "pp": 25,
+    "description": "An attack that may cause a burn."
+  },
+  "hard-press": {
+    "id": "hard-press",
+    "name": "Hard Press",
+    "type": "steel",
+    "category": "physical",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 10,
+    "description": "The target is crushed with an arm, a claw, or the like to inflict damage. The more HP the target has left, the greater the move's power."
+  },
+  "horn-drill": {
+    "id": "horn-drill",
+    "name": "Horn Drill",
+    "type": "normal",
+    "category": "physical",
+    "power": 0,
+    "accuracy": 30,
+    "pp": 5,
+    "description": "A one-hit KO, drill attack."
+  },
+  "supersonic": {
+    "id": "supersonic",
+    "name": "Supersonic",
+    "type": "normal",
+    "category": "status",
+    "power": 0,
+    "accuracy": 55,
+    "pp": 20,
+    "description": "Sound waves that cause confusion."
+  },
+  "mystical-fire": {
+    "id": "mystical-fire",
+    "name": "Mystical Fire",
+    "type": "fire",
+    "category": "special",
+    "power": 75,
+    "accuracy": 100,
+    "pp": 10,
+    "description": "The user attacks by breathing a special, hot fire. This also lowers the target’s Sp. Atk stat."
+  },
+  "sky-attack": {
+    "id": "sky-attack",
+    "name": "Sky Attack",
+    "type": "flying",
+    "category": "physical",
+    "power": 140,
+    "accuracy": 90,
+    "pp": 5,
+    "description": "1st turn: Prepare 2nd turn: Attack"
+  },
+  "dragon-breath": {
+    "id": "dragon-breath",
+    "name": "Dragon Breath",
+    "type": "dragon",
+    "category": "special",
+    "power": 60,
+    "accuracy": 100,
+    "pp": 20,
+    "description": "A strong breath attack."
+  },
+  "power-gem": {
+    "id": "power-gem",
+    "name": "Power Gem",
+    "type": "rock",
+    "category": "special",
+    "power": 80,
+    "accuracy": 100,
+    "pp": 20,
+    "description": "The user attacks with a ray of light that sparkles as if it were made of gemstones. "
+  },
+  "triple-axel": {
+    "id": "triple-axel",
+    "name": "Triple Axel",
+    "type": "ice",
+    "category": "physical",
+    "power": 20,
+    "accuracy": 90,
+    "pp": 10,
+    "description": "A consecutive three-kick attack that becomes more powerful with each successful hit."
+  },
+  "psychic-fangs": {
+    "id": "psychic-fangs",
+    "name": "Psychic Fangs",
+    "type": "psychic",
+    "category": "physical",
+    "power": 85,
+    "accuracy": 100,
+    "pp": 10,
+    "description": "The user bites the target with its psychic capabilities. This can also destroy Light Screen and Reflect."
+  },
+  "fire-spin": {
+    "id": "fire-spin",
+    "name": "Fire Spin",
+    "type": "fire",
+    "category": "special",
+    "power": 35,
+    "accuracy": 85,
+    "pp": 15,
+    "description": "Traps foe in fire for 2-5 turns."
+  },
+  "fly": {
+    "id": "fly",
+    "name": "Fly",
+    "type": "flying",
+    "category": "physical",
+    "power": 90,
+    "accuracy": 95,
+    "pp": 15,
+    "description": "1st turn: Fly 2nd turn: Attack"
+  },
+  "teleport": {
+    "id": "teleport",
+    "name": "Teleport",
+    "type": "psychic",
+    "category": "status",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 20,
+    "description": "A move for fleeing from battle."
+  },
+  "flame-charge": {
+    "id": "flame-charge",
+    "name": "Flame Charge",
+    "type": "fire",
+    "category": "physical",
+    "power": 50,
+    "accuracy": 100,
+    "pp": 20,
+    "description": "The user cloaks itself with flame and attacks. Building up more power, it raises the user’s Speed stat."
+  },
+  "tail-slap": {
+    "id": "tail-slap",
+    "name": "Tail Slap",
+    "type": "normal",
+    "category": "physical",
+    "power": 25,
+    "accuracy": 85,
+    "pp": 10,
+    "description": "The user attacks by striking the target with its hard tail. It hits the target two to five times in a row."
+  },
+  "moonblast": {
+    "id": "moonblast",
+    "name": "Moonblast",
+    "type": "fairy",
+    "category": "special",
+    "power": 95,
+    "accuracy": 100,
+    "pp": 15,
+    "description": "Borrowing the power of the moon, the user attacks the target. This may also lower the target’s Sp. Atk stat."
+  },
+  "sludge-bomb": {
+    "id": "sludge-bomb",
+    "name": "Sludge Bomb",
+    "type": "poison",
+    "category": "special",
+    "power": 90,
+    "accuracy": 100,
+    "pp": 10,
+    "description": "An attack that may poison the foe."
+  },
+  "skitter-smack": {
+    "id": "skitter-smack",
+    "name": "Skitter Smack",
+    "type": "bug",
+    "category": "physical",
+    "power": 70,
+    "accuracy": 90,
+    "pp": 10,
+    "description": "The user skitters behind the target to attack. This also lowers the target’s Sp. Atk stat."
+  },
+  "astonish": {
+    "id": "astonish",
+    "name": "Astonish",
+    "type": "ghost",
+    "category": "physical",
+    "power": 30,
+    "accuracy": 100,
+    "pp": 15,
+    "description": "An attack that may shock the foe into flinching."
+  },
+  "dazzling-gleam": {
+    "id": "dazzling-gleam",
+    "name": "Dazzling Gleam",
+    "type": "fairy",
+    "category": "special",
+    "power": 80,
+    "accuracy": 100,
+    "pp": 10,
+    "description": "The user damages opposing Pokémon by emitting a powerful flash."
+  },
+  "petal-blizzard": {
+    "id": "petal-blizzard",
+    "name": "Petal Blizzard",
+    "type": "grass",
+    "category": "physical",
+    "power": 90,
+    "accuracy": 100,
+    "pp": 15,
+    "description": "The user stirs up a violent petal blizzard and attacks everything around it."
+  },
+  "lash-out": {
+    "id": "lash-out",
+    "name": "Lash Out",
+    "type": "dark",
+    "category": "physical",
+    "power": 75,
+    "accuracy": 100,
+    "pp": 5,
+    "description": "The user lashes out to vent its frustration toward the target. If the user’s stats were lowered during this turn, the power of this move is doubled."
+  },
+  "mach-punch": {
+    "id": "mach-punch",
+    "name": "Mach Punch",
+    "type": "fighting",
+    "category": "physical",
+    "power": 40,
+    "accuracy": 100,
+    "pp": 30,
+    "description": "A fast punch that lands first."
+  },
+  "magic-room": {
+    "id": "magic-room",
+    "name": "Magic Room",
+    "type": "psychic",
+    "category": "status",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 10,
+    "description": "The user creates a bizarre area in which Pokémon’s held items lose their effects for five turns."
+  },
+  "sucker-punch": {
+    "id": "sucker-punch",
+    "name": "Sucker Punch",
+    "type": "dark",
+    "category": "physical",
+    "power": 70,
+    "accuracy": 100,
+    "pp": 5,
+    "description": "This move enables the user to attack first. It fails if the foe is not readying an attack, however."
+  },
+  "steamroller": {
+    "id": "steamroller",
+    "name": "Steamroller",
+    "type": "bug",
+    "category": "physical",
+    "power": 65,
+    "accuracy": 100,
+    "pp": 20,
+    "description": "The user crushes its targets by rolling over them with its rolled-up body. This attack may make the target flinch."
+  },
+  "slack-off": {
+    "id": "slack-off",
+    "name": "Slack Off",
+    "type": "normal",
+    "category": "status",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 5,
+    "effect": "heal_50",
+    "description": "Slacks off and restores half the maximum HP."
+  },
+  "smog": {
+    "id": "smog",
+    "name": "Smog",
+    "type": "poison",
+    "category": "special",
+    "power": 30,
+    "accuracy": 70,
+    "pp": 20,
+    "description": "An attack that may poison the foe."
+  },
+  "lick": {
+    "id": "lick",
+    "name": "Lick",
+    "type": "ghost",
+    "category": "physical",
+    "power": 30,
+    "accuracy": 100,
+    "pp": 30,
+    "description": "An attack that may cause paralysis."
+  },
+  "spike-cannon": {
+    "id": "spike-cannon",
+    "name": "Spike Cannon",
+    "type": "normal",
+    "category": "physical",
+    "power": 20,
+    "accuracy": 100,
+    "pp": 15,
+    "description": "Fires spikes to hit 2-5 times."
+  },
+  "hammer-arm": {
+    "id": "hammer-arm",
+    "name": "Hammer Arm",
+    "type": "fighting",
+    "category": "physical",
+    "power": 100,
+    "accuracy": 90,
+    "pp": 10,
+    "description": "The user swings and hits with its strong and heavy fist. It lowers the user’s Speed, however."
+  },
+  "sonic-boom": {
+    "id": "sonic-boom",
+    "name": "Sonic Boom",
+    "type": "normal",
+    "category": "special",
+    "power": 0,
+    "accuracy": 90,
+    "pp": 20,
+    "description": "Always inflicts 20HP damage."
+  },
+  "stockpile": {
+    "id": "stockpile",
+    "name": "Stockpile",
+    "type": "normal",
+    "category": "status",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 20,
+    "description": "Charges up power for up to 3 turns."
+  },
+  "extrasensory": {
+    "id": "extrasensory",
+    "name": "Extrasensory",
+    "type": "psychic",
+    "category": "special",
+    "power": 80,
+    "accuracy": 100,
+    "pp": 20,
+    "description": "Attacks with a peculiar power. May cause flinching."
+  },
+  "block": {
+    "id": "block",
+    "name": "Block",
+    "type": "normal",
+    "category": "status",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 5,
+    "description": "Blocks the foe’s way to prevent escape."
+  },
+  "recover": {
+    "id": "recover",
+    "name": "Recover",
+    "type": "normal",
+    "category": "status",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 5,
+    "effect": "heal_50",
+    "description": "Restores HP by 1/2 the max HP."
+  },
+  "pound": {
+    "id": "pound",
+    "name": "Pound",
+    "type": "normal",
+    "category": "physical",
+    "power": 40,
+    "accuracy": 100,
+    "pp": 35,
+    "description": "Pounds with fore­ legs or tail."
+  },
+  "electric-terrain": {
+    "id": "electric-terrain",
+    "name": "Electric Terrain",
+    "type": "electric",
+    "category": "status",
+    "power": 0,
+    "accuracy": 100,
+    "pp": 10,
+    "description": "The user electrifies the ground under everyone’s feet for five turns. Pokémon on the ground no longer fall asleep."
+  },
+  "storm-throw": {
+    "id": "storm-throw",
+    "name": "Storm Throw",
+    "type": "fighting",
+    "category": "physical",
+    "power": 60,
+    "accuracy": 100,
+    "pp": 10,
+    "description": "The user strikes the target with a fierce blow. This attack always results in a critical hit."
+  },
+  "bug-buzz": {
+    "id": "bug-buzz",
+    "name": "Bug Buzz",
+    "type": "bug",
+    "category": "special",
+    "power": 90,
+    "accuracy": 100,
+    "pp": 10,
+    "description": "The user vibrates its wings to generate a damaging sound wave. It may also lower the foe’s Sp. Def stat."
+  },
+  "draco-meteor": {
+    "id": "draco-meteor",
+    "name": "Draco Meteor",
+    "type": "dragon",
+    "category": "special",
+    "power": 130,
+    "accuracy": 90,
+    "pp": 5,
+    "description": "Comets are summoned down from the sky. The attack’s recoil sharply reduces the user’s Sp. Atk stat."
   }
 }
